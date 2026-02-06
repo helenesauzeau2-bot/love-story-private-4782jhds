@@ -1,215 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notre Histoire ♥</title>
+<meta charset="UTF-8">
+<title>Notre Histoire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<!-- ================= CSS ================= -->
+<style>
+:root {
+    --deep-ocean: #2c3e50;
+    --soft-sand: #fff9f0;
+    --coral: #ff7a7a;
+    --sunset: #f6b26b;
+    --blue-soft: #7ba8c1;
+}
 
-    <style>
-        :root {
-            --ocean-blue: #7BA8C1;
-            --sand: #F4E8D0;
-            --coral: #F4A896;
-            --sunset: #FFB88C;
-            --deep-ocean: #4A7C95;
-            --cream: #FFF9F0;
-            --text-dark: #2C4251;
-        }
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(180deg, var(--soft-sand), #ffffff);
+    color: var(--deep-ocean);
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* ===== MENU ===== */
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px;
+    background: rgba(255, 249, 240, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(123,168,193,0.3);
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+.top-nav a {
+    text-decoration: none;
+    font-size: 1.1em;
+    color: var(--deep-ocean);
+    padding: 8px 18px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 50%, var(--ocean-blue) 100%);
-            background-attachment: fixed;
-            color: var(--text-dark);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
+.top-nav a:hover {
+    background: linear-gradient(135deg, var(--coral), var(--sunset));
+    color: white;
+}
 
-        /* ===================== */
-        /* MENU DE NAVIGATION */
-        /* ===================== */
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
 
-        .top-nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px 20px;
-            background: rgba(255, 249, 240, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(123, 168, 193, 0.3);
-        }
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
 
-        .top-nav a {
-            text-decoration: none;
-            font-size: 0.95em;
-            color: var(--deep-ocean);
-            font-weight: 300;
-            padding: 8px 14px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
 
-        .top-nav a:hover {
-            background: linear-gradient(135deg, var(--coral), var(--sunset));
-            color: white;
-        }
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        /* ===================== */
-        /* HEADER */
-        /* ===================== */
+.section {
+    margin-bottom: 70px;
+}
 
-        header {
-            text-align: center;
-            padding: 100px 20px 60px;
-            background: linear-gradient(180deg, rgba(255,249,240,0.95) 0%, rgba(244,232,208,0.8) 100%);
-            position: relative;
-        }
+.section h2 {
+    text-ali
 
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4.5em;
-            font-weight: 300;
-            color: var(--deep-ocean);
-            margin-bottom: 20px;
-        }
-
-        .subtitle {
-            font-size: 1.3em;
-            color: var(--coral);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .section {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 60px 50px;
-            margin-bottom: 60px;
-            box-shadow: 0 20px 60px rgba(74, 124, 149, 0.15);
-            position: relative;
-        }
-
-        h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8em;
-            color: var(--deep-ocean);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        /* ===================== */
-        /* GALERIE PHOTOS */
-        /* ===================== */
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .gallery-img {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(74, 124, 149, 0.2);
-            transition: all 0.4s ease;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.05) rotate(1deg);
-            box-shadow: 0 15px 40px rgba(244, 168, 150, 0.4);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            font-size: 1.1em;
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- MENU -->
-    <nav class="top-nav">
-        <a href="#chiffres">💫 Chiffres</a>
-        <a href="#timeline">📜 Histoire</a>
-        <a href="#lieux">📍 Lieux</a>
-        <a href="#galerie">📸 Galerie</a>
-        <a href="#contrat">📄 Contrat</a>
-        <a href="#projets">🚀 Projets</a>
-        <a href="#citations">💬 Citations</a>
-    </nav>
-
-    <!-- HEADER -->
-    <header>
-        <h1>Martin & Hélène</h1>
-        <p class="subtitle">Notre Histoire d'Amour ☼ ≈</p>
-    </header>
-
-    <div class="container">
-
-        <section class="section" id="chiffres">
-            <h2>Notre Relation en Chiffres</h2>
-        </section>
-
-        <section class="section" id="timeline">
-            <h2>Notre Histoire Ensemble</h2>
-        </section>
-
-        <section class="section" id="lieux">
-            <h2>Nos Lieux Magiques</h2>
-        </section>
-
-        <section class="section" id="galerie">
-            <h2>Notre Galerie de Souvenirs</h2>
-            <div class="gallery">
-                <img src="images/photo1.jpg" alt="Souvenir 1" class="gallery-img">
-                <img src="images/photo2.jpg" alt="Souvenir 2" class="gallery-img">
-                <img src="images/photo3.jpg" alt="Souvenir 3" class="gallery-img">
-                <img src="images/photo4.jpg" alt="Souvenir 4" class="gallery-img">
-            </div>
-        </section>
-
-        <section class="section" id="contrat">
-            <h2>Notre Contrat d'Amour</h2>
-        </section>
-
-        <section class="section" id="projets">
-            <h2>Nos Projets</h2>
-        </section>
-
-        <section class="section" id="citations">
-            <h2>Nos Citations Préférées</h2>
-        </section>
-
-    </div>
-
-    <footer>
-        Martin & Hélène — Pour toujours ∞
-    </footer>
-
-</body>
-</html>

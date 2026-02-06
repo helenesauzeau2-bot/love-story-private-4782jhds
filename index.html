@@ -1,82 +1,1088 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Notre Histoire</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire ♥</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-blue: #7BA8C1;
+            --sand: #F4E8D0;
+            --coral: #F4A896;
+            --sunset: #FFB88C;
+            --deep-ocean: #4A7C95;
+            --cream: #FFF9F0;
+            --text-dark: #2C4251;
+        }
 
-<!-- ================= CSS ================= -->
-<style>
-:root {
-    --deep-ocean: #2c3e50;
-    --soft-sand: #fff9f0;
-    --coral: #ff7a7a;
-    --sunset: #f6b26b;
-    --blue-soft: #7ba8c1;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    background: linear-gradient(180deg, var(--soft-sand), #ffffff);
-    color: var(--deep-ocean);
-}
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 50%, var(--ocean-blue) 100%);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-/* ===== MENU ===== */
-.top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 16px;
-    background: rgba(255, 249, 240, 0.95);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(123,168,193,0.3);
-}
+        .wave-divider {
+            width: 100%;
+            height: 80px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%23FFF9F0" opacity="0.3"></path></svg>') no-repeat center;
+            background-size: cover;
+        }
 
-.top-nav a {
-    text-decoration: none;
-    font-size: 1.1em;
-    color: var(--deep-ocean);
-    padding: 8px 18px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            background: linear-gradient(180deg, rgba(255,249,240,0.95) 0%, rgba(244,232,208,0.8) 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-.top-nav a:hover {
-    background: linear-gradient(135deg, var(--coral), var(--sunset));
-    color: white;
-}
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,184,140,0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
 
-/* ===== HEADER ===== */
-header {
-    text-align: center;
-    padding: 80px 20px 40px;
-}
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-30px, 30px) rotate(240deg); }
+        }
 
-header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5em;
+            font-weight: 300;
+            color: var(--deep-ocean);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1.5s ease-out;
+        }
 
-.subtitle {
-    font-size: 1.2em;
-    opacity: 0.8;
-}
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-/* ===== CONTAINER ===== */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 20px;
-}
+        .subtitle {
+            font-size: 1.3em;
+            color: var(--coral);
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 2s ease-out 0.5s both;
+        }
 
-.section {
-    margin-bottom: 70px;
-}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-.section h2 {
-    text-ali
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
+        .section {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 60px rgba(74, 124, 149, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            animation: slideUp 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--coral), var(--sunset));
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8em;
+            color: var(--deep-ocean);
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--coral), var(--sunset));
+            border-radius: 2px;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .counter-item {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--cream), rgba(255,249,240,0.5));
+            border-radius: 20px;
+            border: 2px solid rgba(123, 168, 193, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .counter-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(244, 168, 150, 0.3);
+            border-color: var(--coral);
+        }
+
+        .counter-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5em;
+            color: var(--coral);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .counter-label {
+            font-size: 1.1em;
+            color: var(--deep-ocean);
+            font-weight: 300;
+        }
+
+        .countdown-box {
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-ocean));
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 15px 40px rgba(74, 124, 149, 0.4);
+        }
+
+        .countdown-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-unit {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .countdown-unit span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        .countdown-unit small {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--ocean-blue), var(--coral), var(--sunset));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--cream), rgba(244,232,208,0.5));
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(74, 124, 149, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(244, 168, 150, 0.3);
+        }
+
+        .timeline-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3em;
+            color: var(--coral);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 1.1em;
+            color: var(--deep-ocean);
+            font-weight: 400;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--sunset);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 184, 140, 0.3);
+            z-index: 2;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            background: var(--cream);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px dashed var(--ocean-blue);
+        }
+
+        .location-item {
+            padding: 20px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 15px;
+            border-left: 5px solid var(--coral);
+            transition: all 0.3s ease;
+        }
+
+        .location-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(244, 168, 150, 0.2);
+        }
+
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5em;
+            color: var(--deep-ocean);
+            margin-bottom: 5px;
+        }
+
+        .location-address {
+            color: var(--text-dark);
+            opacity: 0.7;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--coral));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            padding: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(74, 124, 149, 0.2);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(244, 168, 150, 0.4);
+        }
+
+        .contract-section {
+            background: linear-gradient(135deg, rgba(255,249,240,0.95), rgba(244,232,208,0.8));
+            padding: 40px 50px;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 2px solid var(--ocean-blue);
+        }
+
+        .contract-header {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            color: var(--deep-ocean);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .contract-parties {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        .contract-article {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            border-left: 4px solid var(--coral);
+        }
+
+        .article-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4em;
+            color: var(--deep-ocean);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .article-content {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .article-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .contract-duration {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-ocean));
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .bucket-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .bucket-item {
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--cream), white);
+            border-radius: 15px;
+            border-left: 5px solid var(--sunset);
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 60px;
+        }
+
+        .bucket-item::before {
+            content: '♥';
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--coral);
+            font-size: 1.5em;
+        }
+
+        .bucket-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(255, 184, 140, 0.3);
+            border-left-color: var(--coral);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, white, var(--cream));
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px solid rgba(123, 168, 193, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(244, 168, 150, 0.3);
+            border-color: var(--coral);
+        }
+
+        .project-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .project-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3em;
+            color: var(--deep-ocean);
+            margin-bottom: 10px;
+        }
+
+        .love-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .love-item {
+            background: linear-gradient(135deg, var(--sunset), var(--coral));
+            color: white;
+            padding: 30px 25px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.1em;
+            box-shadow: 0 10px 30px rgba(244, 168, 150, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .love-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 184, 140, 0.5);
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, var(--deep-ocean), var(--ocean-blue));
+            color: white;
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 1.5em;
+            line-height: 1.8;
+            box-shadow: 0 15px 40px rgba(74, 124, 149, 0.4);
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4em;
+            opacity: 0.3;
+            display: block;
+            margin-bottom: -30px;
+        }
+
+        .quote-author {
+            margin-top: 20px;
+            font-style: normal;
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, transparent 0%, rgba(244,232,208,0.5) 100%);
+            color: var(--text-dark);
+            font-size: 1.1em;
+        }
+
+        footer::before {
+            content: '♥';
+            display: block;
+            font-size: 3em;
+            color: var(--coral);
+            margin-bottom: 20px;
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3em; }
+            h2 { font-size: 2em; }
+            .section { padding: 40px 30px; }
+            .timeline::before { left: 30px; }
+            .timeline-item { flex-direction: column !important; align-items: flex-start; }
+            .timeline-content { width: calc(100% - 60px); margin-left: 60px; }
+            .timeline-dot { left: 30px; }
+            .counter-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Martin & Hélène</h1>
+        <p class="subtitle">Notre Histoire d'Amour ☼ ≈</p>
+    </header>
+
+    <div class="wave-divider"></div>
+
+    <div class="container">
+        <!-- Compteur de relation -->
+        <section class="section">
+            <h2>Notre Relation en Chiffres</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="counter-number" id="days">0</span>
+                    <span class="counter-label">jours ensemble</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="months">0</span>
+                    <span class="counter-label">mois d'amour</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" id="years">0</span>
+                    <span class="counter-label">années de bonheur</span>
+                </div>
+            </div>
+
+            <div class="countdown-box">
+                <h3>Compte à rebours jusqu'à notre prochain anniversaire</h3>
+                <div class="countdown-timer">
+                    <div class="countdown-unit">
+                        <span id="countdown-days">0</span>
+                        <small>jours</small>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="countdown-hours">0</span>
+                        <small>heures</small>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="countdown-minutes">0</span>
+                        <small>minutes</small>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="countdown-seconds">0</span>
+                        <small>secondes</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section">
+            <h2>Notre Histoire Ensemble</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">4 septembre 2006</div>
+                        <div class="timeline-title">Première rentrée scolaire ensemble</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">20 mars 2025</div>
+                        <div class="timeline-title">Premier message ✉️</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">1er avril 2025</div>
+                        <div class="timeline-title">Premier faux date 😄</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">17 avril 2025</div>
+                        <div class="timeline-title">Premier vrai date ♥</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">28 avril 2025</div>
+                        <div class="timeline-title">Premier baiser 💋</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">3 juillet 2025</div>
+                        <div class="timeline-title">Officialisation 💑</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">23 juillet 2025</div>
+                        <div class="timeline-title">Premier "Je t'aime" 💕</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">26-31 août 2025</div>
+                        <div class="timeline-title">Premières vacances ensemble 🏖️</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">24 décembre 2025</div>
+                        <div class="timeline-title">Premier Noël ensemble 🎄</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lieux importants -->
+        <section class="section">
+            <h2>Nos Lieux Magiques</h2>
+            <div class="map-container">
+                <div class="location-item">
+                    <div class="location-name">🍺 Embassy Canadian Pub</div>
+                    <div class="location-address">Porte Maillot, Paris</div>
+                </div>
+                <div class="location-item">
+                    <div class="location-name">🏡 Notre petit nid</div>
+                    <div class="location-address">4 rue du hameau fleuri, Boulogne</div>
+                </div>
+                <div class="location-item">
+                    <div class="location-name">🌳 Notre refuge</div>
+                    <div class="location-address">3 boulevard Gabriel Péri, Rosny</div>
+                </div>
+                <div class="location-item">
+                    <div class="location-name">🌊 La plage des Sablons</div>
+                    <div class="location-address">Bretagne</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie photos -->
+        <section class="section">
+            <h2>Notre Galerie de Souvenirs</h2>
+            <div class="gallery">
+                <div class="gallery-item">📸 Ajoutez vos photos ici</div>
+                <div class="gallery-item">💝 Souvenirs précieux</div>
+                <div class="gallery-item">🌅 Moments magiques</div>
+                <div class="gallery-item">😊 Nos sourires</div>
+                <div class="gallery-item">🎉 Nos célébrations</div>
+                <div class="gallery-item">✨ Notre bonheur</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: var(--text-dark); opacity: 0.7;">
+                <em>Pour ajouter vos photos, remplacez les divs avec des balises &lt;img&gt;</em>
+            </p>
+        </section>
+
+        <!-- Contrat de relation -->
+        <section class="section">
+            <h2>Notre Contrat d'Amour</h2>
+            <div class="contract-section">
+                <div class="contract-header">CONTRAT DE RELATION AMOUREUSE</div>
+                
+                <div class="contract-parties">
+                    <strong>Entre :</strong> Martin, Yves, Frédéric SALEMBIER<br>
+                    <strong>et</strong> Hélène, Erica, Margot SAUZEAU
+                </div>
+
+                <p style="margin-bottom: 30px; text-align: center; font-style: italic;">
+                    Les deux parties, par la présente, conviennent librement et de plein gré des clauses suivantes, 
+                    dans le but d'entretenir une relation saine, bienveillante et durable, fondée sur le respect, 
+                    la complicité et l'amour partagé.
+                </p>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 1 : Bienveillance et soin mutuel</div>
+                    <div class="article-content">
+                        Les parties s'engagent à toujours se traiter avec respect, douceur et bienveillance. 
+                        Chacun veille au bien-être de l'autre, dans les moments heureux comme dans les périodes difficiles 
+                        et s'engage à pratiquer une écoute active et attentive lors des échanges.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 2 : Partage et réciprocité</div>
+                    <div class="article-content">
+                        Les parties conviennent de recevoir avec gratitude ce que l'autre souhaite offrir, 
+                        matériellement ou émotionnellement, et de donner en retour avec générosité et sincérité, 
+                        sans obligation mais avec le cœur.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 3 : Communication</div>
+                    <div class="article-content">
+                        Les parties s'engagent à exprimer leurs ressentis, qu'ils soient positifs ou négatifs, 
+                        afin de préserver une compréhension mutuelle. Dire « ça ne va pas » est aussi important 
+                        que dire « ça va très bien ».
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 4 : Fidélité et loyauté</div>
+                    <div class="article-content">
+                        Les parties s'engagent à rester fidèles l'une envers l'autre, à ne pas commettre d'actes 
+                        qu'elles ne souhaiteraient pas subir elles-mêmes, et à cultiver une confiance mutuelle solide 
+                        et durable, fondée sur la transparence et l'honnêteté.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 5 : Temps de qualité</div>
+                    <div class="article-content">
+                        Les parties s'engagent à consacrer régulièrement du temps de qualité l'une à l'autre, 
+                        en accordant toute leur attention au moment partagé, sans distractions numériques ou professionnelles, 
+                        afin de nourrir la connexion émotionnelle et renforcer la complicité.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 6 : Cultiver la joie et les souvenirs</div>
+                    <div class="article-content">
+                        Les parties s'engagent à créer ensemble des moments de bonheur, petits ou grands, 
+                        et à nourrir leur relation par des rires, des attentions, et des aventures partagées. 
+                        Les souvenirs ainsi créés seront considérés comme patrimoine commun du couple, 
+                        et les succès, petits ou grands, seront célébrés ensemble.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 7 : Célébration des petites choses</div>
+                    <div class="article-content">
+                        Les parties s'engagent à savourer les petits bonheurs quotidiens : un café partagé 
+                        (ou bubble tea), un message inattendu, un sourire complice.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 8 : Rituels communs</div>
+                    <div class="article-content">
+                        Les parties conviennent de mettre en place et de préserver des rituels communs 
+                        (cuisiner et manger ensemble et autres rituels à définir) qui serviront de repères 
+                        positifs et rassurants dans la relation.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 9 : Soutien dans les projets personnels</div>
+                    <div class="article-content">
+                        Chaque partie s'engage à encourager et soutenir les ambitions, passions et objectifs de l'autre, 
+                        même si ceux-ci sont différents des siens.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 10 : Hygiène de vie et bien-être</div>
+                    <div class="article-content">
+                        Les parties s'engagent à encourager et maintenir ensemble un mode de vie sain, 
+                        favorisant la santé physique, mentale et émotionnelle. Cela inclut :
+                        <ul>
+                            <li>la pratique régulière d'une activité physique adaptée,</li>
+                            <li>une alimentation variée, équilibrée et préparée avec soin,</li>
+                            <li>une consommation modérée ou occasionnelle d'alcool,</li>
+                            <li>le respect de l'engagement mutuel à ne pas fumer, ni reprendre la consommation de tabac 
+                            sous quelque forme que ce soit.</li>
+                        </ul>
+                        Ces choix sont considérés comme des engagements communs visant à préserver la vitalité, 
+                        la longévité et le bien-être du couple.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 11 : Droit à l'espace personnel</div>
+                    <div class="article-content">
+                        Les parties reconnaissent l'importance d'un espace individuel (temps seul, amis, hobbies) 
+                        et s'engagent à le respecter sans jalousie excessive.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 12 : Résolution pacifique des désaccords</div>
+                    <div class="article-content">
+                        En cas de conflits, les parties privilégient la discussion calme et le compromis 
+                        plutôt que la colère ou l'ignorance, et, si nécessaire, conviennent d'un temps de pause 
+                        avant de reprendre la discussion.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 13 : Intimité et consentement</div>
+                    <div class="article-content">
+                        Les parties s'engagent à nourrir leur relation intime avec respect, tendresse et désir partagé. 
+                        Toute interaction physique doit être librement consentie par les deux parties et viser le plaisir, 
+                        la complicité et la connexion émotionnelle. Les besoins et envies de chacun seront exprimés 
+                        et pris en compte dans un dialogue ouvert et bienveillant.
+                    </div>
+                </div>
+
+                <div class="contract-article">
+                    <div class="article-title">Article 14 : Évolution ensemble</div>
+                    <div class="article-content">
+                        Les parties s'engagent à évoluer et grandir ensemble, en acceptant que chacun change au fil du temps, 
+                        et à adapter leur relation en conséquence, tout en restant curieux(ses) l'un de l'autre.
+                    </div>
+                </div>
+
+                <div class="contract-duration">
+                    <strong>Durée de renouvellement :</strong><br>
+                    Ce contrat prend effet à compter de la date de signature et reste valable indéfiniment, 
+                    sous réserve de la volonté commune des deux parties de l'honorer. Il peut être amendé à tout moment 
+                    d'un commun accord, par écrit et signé par les deux parties.
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets de vie -->
+        <section class="section">
+            <h2>Nos Projets de Vie</h2>
+            <ul class="bucket-list">
+                <li class="bucket-item">Emménager ensemble</li>
+                <li class="bucket-item">Se pacser</li>
+                <li class="bucket-item">Acheter une maison à la mer avec une cheminée</li>
+                <li class="bucket-item">Avoir une famille avec 1, 2 ou 3 enfants</li>
+                <li class="bucket-item">Avoir des chats</li>
+                <li class="bucket-item">Voyager autour du monde</li>
+                <li class="bucket-item">S'aimer pour toujours</li>
+            </ul>
+        </section>
+
+        <!-- Projets 2026 -->
+        <section class="section">
+            <h2>Nos Projets 2026</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">📸</div>
+                    <div class="project-title">Journée photographique</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <div class="project-title">Activité insolite</div>
+                    <p>Escape Game, atelier poterie, etc.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">💑</div>
+                    <div class="project-title">Refaire le 1er date</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">✈️</div>
+                    <div class="project-title">Voyage 1 semaine</div>
+                    <p>Vienne, Bratislava, Cracovie</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🥾</div>
+                    <div class="project-title">Randonnées</div>
+                    <p>Chez Lucile et aux Coches</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🏠</div>
+                    <div class="project-title">Emménagement</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🏃</div>
+                    <div class="project-title">Aller courir ensemble</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🌍</div>
+                    <div class="project-title">City trips</div>
+                    <p>Marseille, Istanbul, capitales nordiques, Athènes, Saint-Pétersbourg, Tallinn</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🚂</div>
+                    <div class="project-title">Interrail Europe de l'Est</div>
+                    <p>Ex-Yougoslavie + Albanie</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🎳</div>
+                    <div class="project-title">Bowling</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🕹️</div>
+                    <div class="project-title">Jeux d'arcade</div>
+                    <p>La tête dans les nuages</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">👨‍🍳</div>
+                    <div class="project-title">Atelier cuisine</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🏺</div>
+                    <div class="project-title">Atelier poterie</div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🖼️</div>
+                    <div class="project-title">Visite musée</div>
+                    <p>Invitation réciproque (28/03)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que j'aime chez toi -->
+        <section class="section">
+            <h2>Ce que j'aime chez toi</h2>
+            <div class="love-list">
+                <div class="love-item">Ta persévérance qui m'inspire</div>
+                <div class="love-item">Ta loyauté sans faille</div>
+                <div class="love-item">Ton écoute attentive</div>
+                <div class="love-item">Ta folie qui me fait rire</div>
+                <div class="love-item">Ta beauté intérieure et extérieure</div>
+                <div class="love-item">Ton sourire qui illumine mes journées</div>
+                <div class="love-item">Ta douceur dans les moments tendres</div>
+                <div class="love-item">Ton intelligence qui me fascine</div>
+                <div class="love-item">Ta capacité à me surprendre</div>
+                <div class="love-item">Ton courage face aux défis</div>
+                <div class="love-item">Ta générosité du cœur</div>
+                <div class="love-item">Ta présence réconfortante</div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: var(--text-dark); opacity: 0.7;">
+                <em>Modifiez cette liste avec vos propres raisons d'amour ♥</em>
+            </p>
+        </section>
+
+        <!-- Citations -->
+        <section class="section">
+            <h2>Nos Citations Préférées</h2>
+            
+            <div class="quote-section">
+                Mais... C'est qu'elle est pas mal du tout cette vérité !
+                <div class="quote-author">— RRRRR (2004)</div>
+            </div>
+
+            <div class="quote-section" style="margin-top: 30px;">
+                Non mais tu vas pas recommencer avec tes questions !
+                <div class="quote-author">— RRRRR (2004)</div>
+            </div>
+
+            <div class="quote-section" style="margin-top: 30px;">
+                C'est pas faux.
+                <div class="quote-author">— Kaamelott (mais on aime aussi !)</div>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px; color: var(--text-dark); opacity: 0.7;">
+                <em>Ajoutez vos propres citations d'amour et répliques favorites !</em>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        Martin & Hélène — Pour toujours ∞
+    </footer>
+
+    <script>
+        // Calcul du compteur de relation
+        const startDate = new Date('2025-04-17'); // Premier date
+        
+        function updateCounters() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const months = Math.floor(days / 30.44); // Moyenne de jours par mois
+            const years = Math.floor(days / 365.25);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('months').textContent = months;
+            document.getElementById('years').textContent = years;
+        }
+        
+        // Compte à rebours jusqu'au prochain anniversaire
+        function updateCountdown() {
+            const now = new Date();
+            let nextAnniversary = new Date(now.getFullYear(), 3, 17); // 17 avril
+            
+            // Si l'anniversaire est déjà passé cette année, prendre l'année suivante
+            if (now > nextAnniversary) {
+                nextAnniversary = new Date(now.getFullYear() + 1, 3, 17);
+            }
+            
+            const diff = nextAnniversary - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').textContent = days;
+            document.getElementById('countdown-hours').textContent = hours;
+            document.getElementById('countdown-minutes').textContent = minutes;
+            document.getElementById('countdown-seconds').textContent = seconds;
+        }
+        
+        // Mise à jour initiale
+        updateCounters();
+        updateCountdown();
+        
+        // Mise à jour du compteur toutes les secondes
+        setInterval(updateCountdown, 1000);
+        // Mise à jour des compteurs toutes les heures
+        setInterval(updateCounters, 1000 * 60 * 60);
+    </script>
+</body>
+</html>
